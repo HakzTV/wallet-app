@@ -38,12 +38,12 @@ const options = {
 mongoose.connect(url, options).then(console.log("mongoose connection succesfull"))
 // Create the strategy
 passport.use(User.createStrategy());
-passport.use(new localStorage(
-    function(username, password, done){
-        if(err){return done(err)}
-        if(!user){return}
-    }
-))
+// passport.use(new localStorage(
+//     function(username, password, done){
+//         if(err){return done(err)}
+//         if(!user){return }
+//     }
+// ))
 // Serializing the user
 passport.serializeUser(function(user, done){
   done(null, user.id);
